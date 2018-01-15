@@ -1,4 +1,15 @@
+:api_key: 97899a642265d9087618ff51bede97a1
 development:
   password: bb62e34d6f13f10af1aa48c61bd8de42
+  theme_id: "7202144284"
+  store: peter-do.myshopify.com
+production:
+  password: 9a91f325de49da9b8bbfe31f64c0ee15
   theme_id: "6845267996"
   store: peter-do.myshopify.com
+  timeout: 60s
+test:
+  password: 9a91f325de49da9b8bbfe31f64c0ee15
+  theme_id: "7202177052"
+  store: peter-do.myshopify.com
+  timeout: 60s
