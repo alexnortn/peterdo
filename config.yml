@@ -1,1 +1,4 @@
-peter-do.myshopify.com
+development:
+  password: bb62e34d6f13f10af1aa48c61bd8de42
+  theme_id: "6845267996"
+  store: peter-do.myshopify.com

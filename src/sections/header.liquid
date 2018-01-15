@@ -225,19 +225,19 @@
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
               <a href="/account" class="site-header__account">
-                {% include 'icon-login' %}
+                {% include 'icon-pd-user' %}
                 <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span>
               </a>
             {% else %}
               <a href="/account/login" class="site-header__account">
-                {% include 'icon-login' %}
+                {% include 'icon-pd-user' %}
                 <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span>
               </a>
             {% endif %}
           {% endif %}
 
           <a href="/cart" class="site-header__cart">
-            {% include 'icon-cart' %}
+            {% include 'icon-pd-bag' %}
             <span class="visually-hidden">{{ 'layout.cart.title' | t }}</span>
             <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
             {% if cart.item_count > 0 %}

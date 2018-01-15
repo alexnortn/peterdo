@@ -173,6 +173,8 @@
               </div>
             {% endif %}
 
+           
+            
             <div class="product-form__item product-form__item--submit">
               <button type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if product.options.size == 1 and product.variants[0].title == 'Default Title' %} product-form__cart-submit--small{% endif %}">
                 <span id="AddToCartText-{{ section.id }}">
@@ -190,6 +192,14 @@
 
         <div class="product-single__description rte" itemprop="description">
           {{ product.description }}
+          
+          
+          {% if product.options contains 'Size' %}
+            <a class="size-chart-open-popup" href="#size-chart">See Size Chart</a>
+            {% endif %}
+
+            
+          
         </div>
 
         {% if section.settings.show_share_buttons %}
@@ -276,3 +286,20 @@
     ]
   }
 {% endschema %}
+
+
+
+    <div id="size-chart" class="mfp-hide">
+    {{ pages.size-chart.content }}
+    </div>
+    <style>
+    #size-chart {
+      position: relative;
+      border: 0px #555 solid;
+      background-color: #ffffff;
+      padding: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>

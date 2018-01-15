@@ -2969,3 +2969,10 @@ theme.init = function() {
 };
 
 $(theme.init);
+
+
+
+$('.size-chart-open-popup').magnificPopup({
+  type:'inline',
+  midClick: true
+});
