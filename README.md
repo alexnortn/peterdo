@@ -1,6 +1,10 @@
 # peterdo
 Shopify app for thepeterdo.com
 
+## reminders
+* css is compiled from scss
+* scss naming convention » BEM
+
 ## helpful links
 
 ### paper doc
