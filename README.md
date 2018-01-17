@@ -10,7 +10,8 @@ Shopify app for thepeterdo.com
 2. themekit commands (_always_ sync with remote)
 	* theme download
 	* theme download + _filename_
-3. slate commands (e === environment)
+3. npm install _new dependencies_
+4. slate commands (e === environment)
 	* slate watch -e dev
 	* slate deploy -e test
 	* slate deploy -e prod
