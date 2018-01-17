@@ -5,6 +5,16 @@ Shopify app for thepeterdo.com
 * css is compiled from scss
 * scss naming convention » BEM
 
+## development commands · working with slate
+1. cd ~/Github/peterdo
+2. themekit commands (_always_ sync with remote)
+	* theme download
+	* theme download + _filename_
+3. slate commands (e === environment)
+	* slate watch -e dev
+	* slate deploy -e test
+	* slate deploy -e prod
+
 ## helpful links
 
 ### paper doc
@@ -13,6 +23,9 @@ Shopify app for thepeterdo.com
 ### shopify/slate overview
 * https://shopify.github.io/slate/commands/
 * https://github.com/Shopify/slate
+
+### shopify/themekit overview
+* https://shopify.github.io/themekit/commands/
 
 ### shopify api reference
 * https://help.shopify.com/api/storefront-api/reference
