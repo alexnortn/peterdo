@@ -4,6 +4,7 @@ Shopify app for thepeterdo.com
 ## reminders
 * css is compiled from scss
 * scss naming convention » BEM
+* theme specific settings stored in ./src/config/settings_data.json
 
 ## development commands · working with slate
 1. cd ~/Github/peterdo

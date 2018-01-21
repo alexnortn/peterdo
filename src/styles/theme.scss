@@ -397,6 +397,7 @@ $transition-image-slideshow: opacity 0.8s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 
 
 $font-weight-normal: 400;
+$font-weight-medium: 600;
 $font-weight-bold: 700;
 
 $font-stack-header: "Work Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
@@ -405,7 +406,82 @@ $font-size-header: 20px;
 $font-bold-titles: false;
 
 $font-stack-body: "Work Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
-$font-size-base: 13px; // Henseforth known as 1em
+$font-size-base: 16px; // Henseforth known as 1em
+
+$fs-1: 12px;
+$fs-2: 16px; // Base aka 1em
+$fs-3: 20px;
+$fs-4: 24px;
+$fs-5: 32px;
+$fs-6: 48px;
+$fs-7: 64px;
+
+@mixin type-cta--12 {
+  font: {
+    family: $font-stack-body;
+    size:   $fs-1;
+    weight: $font-weight-medium;
+  }
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: $fs-1;
+}
+
+@mixin type-cta--12-12 {
+  @include type-cta--12;
+  line-height: $fs-1;
+}
+
+@mixin type-cta--12-16 {
+  @include type-cta--12;
+  line-height: $fs-2;
+}
+
+@mixin type-cta--12-16--ul {
+  @include type-cta--12-16;
+  text-decoration-skip-ink: auto;
+}
+
+@mixin type-cta--12-16--white {
+  @include type-cta--12-16;
+  color: #fff;
+}
+
+@mixin type-input--12-16 {
+  font: {
+    family: $font-stack-body;
+    size:   $fs-1;
+    weight: $font-weight-normal;
+  }
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: $fs-2;
+}
+
+@mixin type-meta--10-12--right {
+  font: {
+    family: $font-stack-body;
+    size:   $fs-1;
+    weight: $font-weight-normal;
+  }
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: $fs-1;
+  text-align: right;
+}
+
+@mixin type-body--16-24 {
+  font: {
+    family: $font-stack-body;
+    size:   $fs-2;
+    weight: $font-weight-normal;
+  }
+  color: #000;
+  line-height: $fs-4;
+}
 
 $font-stack-cart-notification: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 
@@ -2226,12 +2302,12 @@ $dropdown-padding: 11px 17px;
   padding: 0;
   font-size: em($font-size-base - 1px);
   text-align: center;
-  margin: 25px 0;
+  // margin: 25px 0;
   letter-spacing: 2.2px;
 
-  a {
-    padding: 3px 10px;
-  }
+  // a {
+  //   padding: 3px 10px;
+  // }
 
   li {
     display: inline-block;
