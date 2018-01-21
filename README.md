@@ -9,6 +9,7 @@ Shopify app for thepeterdo.com
 1. cd ~/Github/peterdo
 2. themekit commands (_always_ sync with remote)
 	* theme download
+		* theme download -e [environment] -d [destination]
 	* theme download + _filename_
 3. npm install _new dependencies_
 4. slate commands (e === environment)
