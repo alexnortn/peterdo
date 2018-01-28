@@ -284,6 +284,7 @@
       "image_overlay_opacity": 25,
       "color_body_bg": "#fff",
       "type_header_family": "Google_Work+Sans_600_sans",
+      "type_cta_family": "Google_Work+Sans_500_sans",
       "type_header_base_size": "26px",
       "type_base_family": "Google_Work+Sans_400_sans",
       "type_base_size": "16px",
