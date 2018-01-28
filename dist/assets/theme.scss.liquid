@@ -334,7 +334,7 @@ $color-image-overlay: #000000;
 $opacity-image-overlay: 0.25;
 
 // Border colors
-$color-border: #e8e9eb;
+$color-border: #000;
 
 // Helper colors for form error states
 $color-disabled: #f4f4f4;
@@ -347,12 +347,12 @@ $color-success-bg: #f8fff9;
 // Forms
 $color-form-text: #333;
 $color-error-input-text: $color-error;
-$input-padding-top-bottom: 10px;
-$input-padding-left-right: 18px;
+$input-padding-top-bottom: 8px;
+$input-padding-left-right: 16px;
 $input-padding-top-bottom-small: 8px;
-$input-padding-left-right-small: 15px;
-$input-group-height: 46px;
-$input-group-height-small: 42px;
+$input-padding-left-right-small: 16px;
+$input-group-height: 48px;
+$input-group-height-small: 40px;
 
 // Social icons
 $color-facebook: #3b5998;
@@ -362,9 +362,9 @@ $color-pinterest: #cb2027;
 /*================ Sizing Variables ================*/
 $width-site: 1200px;
 $gutter-site: 48px;
-$gutter-site-mobile: 22px;
-$section-spacing: 48px;
-$section-spacing-small: 35px;
+$gutter-site-mobile: 16px;
+$section-spacing: 64px;
+$section-spacing-small: 48px;
 $border-radius: 2px;
 
 /*================ Z-Index ================*/
@@ -409,12 +409,13 @@ $font-stack-body: "Work Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
 $font-size-base: 16px; // Henseforth known as 1em
 
 $fs-1: 12px;
-$fs-2: 16px; // Base aka 1em
-$fs-3: 20px;
-$fs-4: 24px;
-$fs-5: 32px;
-$fs-6: 48px;
-$fs-7: 64px;
+$fs-2: 14px;
+$fs-3: 16px; // Base aka 1em
+$fs-4: 20px;
+$fs-5: 24px;
+$fs-6: 32px;
+$fs-7: 48px;
+$fs-8: 64px;
 
 @mixin type-cta--12 {
   font: {
@@ -435,7 +436,7 @@ $fs-7: 64px;
 
 @mixin type-cta--12-16 {
   @include type-cta--12;
-  line-height: $fs-2;
+  line-height: $fs-3;
 }
 
 @mixin type-cta--12-16--ul {
@@ -445,6 +446,7 @@ $fs-7: 64px;
 
 @mixin type-cta--12-16--white {
   @include type-cta--12-16;
+  font-weight: $font-weight-bold;
   color: #fff;
 }
 
@@ -457,7 +459,7 @@ $fs-7: 64px;
   color: #000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  line-height: $fs-2;
+  line-height: $fs-3;
 }
 
 @mixin type-meta--10-12--right {
@@ -476,8 +478,18 @@ $fs-7: 64px;
 @mixin type-body--16-24 {
   font: {
     family: $font-stack-body;
-    size:   $fs-2;
+    size:   $fs-3;
     weight: $font-weight-normal;
+  }
+  color: #000;
+  line-height: $fs-5;
+}
+
+@mixin type-h--14-20 {
+  font: {
+    family: $font-stack-body;
+    size:   $fs-2;
+    weight: $font-weight-bold;
   }
   color: #000;
   line-height: $fs-4;
@@ -1402,7 +1414,10 @@ h3 {
 }
 
 h4 {
-  font-size: em(floor($font-size-header * 0.68));
+  // font-size: em(floor($font-size-header * 0.68));
+
+  @include type-h--14-20();
+  margin-bottom: 8px;
 
   @include media-query($small) {
     font-size: em(floor(($font-size-header * 0.68) * 0.9));
@@ -1749,13 +1764,15 @@ a {
   border-radius: $border-radius;
   padding: $input-padding-top-bottom-small $input-padding-left-right-small;
   background-color: $color-btn-primary;
-  color: $color-btn-primary-text;
-  font-family: $font-stack-header;
-  font-weight: $font-weight-header;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  white-space: normal;
-  font-size: $font-size-base - 2;
+  // color: $color-btn-primary-text;
+  // font-family: $font-stack-header;
+  // font-weight: $font-weight-header;
+  // text-transform: uppercase;
+  // letter-spacing: 0.08em;
+  // white-space: normal;
+  // font-size: $font-size-base - 2;
+
+  @include type-cta--12-16--white();
 
   @include media-query($medium-up) {
     padding: $input-padding-top-bottom $input-padding-left-right;
@@ -2016,6 +2033,8 @@ select {
   max-width: 100%;
   line-height: 1.2;
   border-radius: $border-radius;
+
+  @include type-input--12-16();
 
   &:focus {
     border-color: darken($color-border, 10%);
@@ -5110,11 +5129,13 @@ $toolbar-height-small: 46px;
 
 .site-footer__linklist-item {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 0 0 16px 8px;
+
+  @include type-cta--12-16();
 
   @include media-query($medium-up) {
     display: block;
-    padding: 0 20px 6px 0;
+    padding: 0 0 16px 8px;
 
     .site-footer__linklist--center & {
       display: inline-block;
@@ -5138,7 +5159,7 @@ $toolbar-height-small: 46px;
   margin-top: $section-spacing-small;
 
   @include media-query($medium-up) {
-    margin-top: $section-spacing;
+    margin-top: $section-spacing-small;
   }
 }
 
