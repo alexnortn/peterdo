@@ -1,6 +1,5 @@
 /*============================================================================
   Debut | Built with Shopify Slate
-
   Some things to know about this file:
     - Sass is compiled on Shopify's server so you don't need to convert it to CSS yourself
     - The output CSS is compressed and comments are removed
@@ -53,13 +52,11 @@
 /*============================================================================
   Prefix mixin for generating vendor prefixes.
   Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
-
   Usage:
     // Input:
     .element {
       @include prefix(transform, scale(1), ms webkit spec);
     }
-
     // Output:
     .element {
       -ms-transform: scale(1);
@@ -530,7 +527,6 @@ $z-index-giftcard-code: 5;
 /*================ VENDOR ================*/
 /*============================================================================
   Slick Slider 1.6.0
-
   - If upgrading Slick's styles, use the following variables/functions
     instead of the slick defaults (from slick-theme.scss)
   - This file includes default slick.scss styles (at Slick Slider SCSS)
@@ -553,10 +549,8 @@ $slick-opacity-not-active: 0.25;
 @function slick-image-url($url) {
   @return url(//cdn.shopify.com/s/files/1/2319/6909/t/4/assets/ajax-loader.gif?10582830525489786797);
 }
-
 // Unused intentionally
 @function slick-font-url($url) {}
-
 /*================ Slick Slider SCSS ================*/
 .slick-slider {
   position: relative;
@@ -578,11 +572,9 @@ $slick-opacity-not-active: 0.25;
   display: block;
   margin: 0;
   padding: 0;
-
   &:focus {
     outline: none;
   }
-
   &.dragging {
     cursor: pointer;
     cursor: hand;
@@ -596,23 +588,19 @@ $slick-opacity-not-active: 0.25;
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-
 .slick-track {
   position: relative;
   left: 0;
   top: 0;
   display: block;
-
   &:before,
   &:after {
     content: "";
     display: table;
   }
-
   &:after {
     clear: both;
   }
-
   .slick-loading & {
     visibility: hidden;
   }
@@ -630,21 +618,16 @@ $slick-opacity-not-active: 0.25;
   &.slick-loading img {
     display: none;
   }
-
   display: none;
-
   &.dragging img {
     pointer-events: none;
   }
-
   .slick-initialized & {
     display: block;
   }
-
   .slick-loading & {
     visibility: hidden;
   }
-
   .slick-vertical & {
     display: block;
     height: auto;
@@ -654,14 +637,12 @@ $slick-opacity-not-active: 0.25;
 .slick-arrow.slick-hidden {
   display: none;
 }
-
 /*================ Slick Slider Theme ================*/
 .slick-list {
   .slick-loading & {
     background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
   }
 }
-
 /* Icons */
 @if $slick-font-family == "slick" {
   @font-face {
@@ -672,9 +653,7 @@ $slick-opacity-not-active: 0.25;
     font-style: normal;
   }
 }
-
 /* Arrows */
-
 .slick-prev,
 .slick-next {
   position: absolute;
@@ -712,7 +691,6 @@ $slick-opacity-not-active: 0.25;
     -moz-osx-font-smoothing: grayscale;
   }
 }
-
 .slick-prev {
   left: -25px;
   [dir="rtl"] & {
@@ -726,7 +704,6 @@ $slick-opacity-not-active: 0.25;
     }
   }
 }
-
 .slick-next {
   right: -25px;
   [dir="rtl"] & {
@@ -740,13 +717,10 @@ $slick-opacity-not-active: 0.25;
     }
   }
 }
-
 /* Dots */
-
 .slick-dotted.slick-slider {
   margin-bottom: 30px;
 }
-
 .slick-dots {
   position: absolute;
   bottom: -25px;
@@ -803,8 +777,6 @@ $slick-opacity-not-active: 0.25;
     }
   }
 }
-
-
 /*================ GLOBAL ================*/
 /*============================================================================
   #Normalize
@@ -815,11 +787,9 @@ $slick-opacity-not-active: 0.25;
 *::after {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
 }
-
 article,
 aside,
 details,
@@ -835,7 +805,6 @@ section,
 summary {
   display: block;
 }
-
 body,
 input,
 textarea,
@@ -844,25 +813,19 @@ select {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
-
 a {
   background-color: transparent;
 }
-
 b,
 strong {
   font-weight: $font-weight-bold;
 }
-
 em {
   font-style: italic;
 }
-
-
 small {
   font-size: 80%;
 }
-
 sub,
 sup {
   font-size: 75%;
@@ -870,20 +833,16 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
-
 sup {
   top: -0.5em;
 }
-
 sub {
   bottom: -0.25em;
 }
-
 img {
   max-width: 100%;
   border: 0;
 }
-
 button,
 input,
 optgroup,
@@ -893,14 +852,12 @@ textarea {
   font: inherit;
   margin: 0;
 }
-
 button,
 html input {
   &[disabled] {
     cursor: default;
   }
 }
-
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -908,14 +865,12 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
-
 input {
   &[type="search"],
   &[type="number"],
@@ -925,29 +880,24 @@ input {
     -moz-appearance: none;
   }
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 td,
 th {
   padding: 0;
 }
-
 textarea {
   overflow: auto;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-
 // hide outline on focus for elements which are given focus by JS
 [tabindex='-1']:focus {
   outline: none;
 }
-
 /*============================================================================
   Fast Tap
   enables no-delay taps (FastClick-esque) on supporting browsers
@@ -961,11 +911,9 @@ select,
 textarea {
   touch-action: manipulation;
 }
-
 /*============================================================================
   #Grid
 ==============================================================================*/
-
 // The `$grid-breakpoints` list is used to build our media queries.
 // You can use these in the media-query mixin.
 $grid-breakpoints: (
@@ -4558,7 +4506,6 @@ $nav-button-padding: 15px;
 
 /*============================================================================
   Hero slider
-
   Extends default slick slider styles.
   Extra specificity in selectors is used to override defaults.
 ==============================================================================*/
@@ -5937,8 +5884,3 @@ $toolbar-height-small: 46px;
 .rich-text__text--small {
   font-size: em(floor($font-size-base * 0.88));
 }
-
-
-
-
-
