@@ -358,6 +358,7 @@ $color-twitter: #00aced;
 $color-pinterest: #cb2027;
 
 /*================ Sizing Variables ================*/
+$width-view: 100vw;
 $width-site: 1200px;
 $gutter-site: 48px;
 $gutter-site-mobile: 16px;
@@ -1239,6 +1240,12 @@ html {
 .page-width {
   @include clearfix();
   max-width: $width-site;
+  margin: 0 auto;
+}
+
+.view-width {
+  @include clearfix();
+  max-width: calc(#{$width-view} - #{$gutter-site} * 2);
   margin: 0 auto;
 }
 

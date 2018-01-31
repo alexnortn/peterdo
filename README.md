@@ -27,6 +27,9 @@ Shopify app for thepeterdo.com
 * https://shopify.github.io/slate/commands/
 * https://github.com/Shopify/slate
 
+### liquid cheat sheet
+* http://cheat.markdunkley.com/
+
 ### shopify/themekit overview
 * https://shopify.github.io/themekit/commands/
 
