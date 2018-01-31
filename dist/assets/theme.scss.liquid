@@ -3757,6 +3757,12 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 }
 
+@include media-query($widescreen) {
+  .site-header__icons {
+    display: none !important;
+  }
+}
+
 @include media-query($large) {
   .site-header__icons {
     display: none !important;
@@ -3766,16 +3772,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 @include media-query($medium) {
   .site-header__icons {
     display: none !important;
-  }
-}
-
-@include media-query($small) {
-  .site-header__icons {
-    display: table-cell !important;
-    .btn--link,
-    .site-header__cart {
-      font-size: em($font-size-base);
-    }
   }
 }
 
