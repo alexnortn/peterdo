@@ -2318,6 +2318,18 @@ $dropdown-padding: 11px 17px;
   }
 }
 
+.site-nav--active {
+  margin-top: 4px;
+
+  &::after {
+    content: '';
+    height: 1px;
+    margin-top: 4px;
+    background: black; 
+    display:block;
+  }
+}
+
 /*================ Dropdowns ================*/
 .site-nav--has-dropdown {
   position: relative;
