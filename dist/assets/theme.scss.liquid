@@ -960,7 +960,6 @@ $grid-breakpoints: (
   }
 }
 
-
 /*============================================================================
   Masonary Grid Setup
     1. Allow the grid system to be used on lists.
@@ -982,9 +981,14 @@ $grid-breakpoints: (
 }
 
 .masonary-grid__item {
-  padding-left: $grid-gutter;
+  // padding-left: $grid-gutter;
+  padding: 100px;
   width: 100%;
   height: auto;
+
+  page-break-inside: avoid; /* Firefox */
+  break-inside: avoid; /* IE 10+ */
+  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
 
   @include media-query($small) {
     padding-left: $grid-gutter-mobile;
