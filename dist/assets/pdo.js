@@ -6,4 +6,11 @@ $(function() {
 	$("#collection-title").text("Things");
 	// how to create a random grid system
 	// a simple algorithm
+	// » create a new hierarchy for the section header element within the template
+	// position: fixed;
+ //    width: 100%;
+ //    height: 100%;
+ //    z-index: 1;
+ //    padding-top: 40%;
+ //    font-size: 48px;
 });
