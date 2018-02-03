@@ -16,8 +16,5 @@ $(function() {
 
 
  	// random padding
- 	$('.masonary-grid__item').each((i, el) => { var val = String(Math.floor(Math.random() * 128)) + "px";  $(el).css( "padding", val ) });
- 	// needs an evt listener: onResize » padding == % vh
- 	// nah, actually go w discrete break points
- 	// make it tween :)
+ 	$('.masonary-grid__item').each((i, el) => { var val = String(Math.floor(Math.random() * 25)) + "%";  $(el).css( "padding", val ) });
 });
