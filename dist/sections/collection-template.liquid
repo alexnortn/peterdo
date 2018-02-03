@@ -152,7 +152,7 @@
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
 
-      <div class="masonary-grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      <div class="masonary-grid grid--uniform shuffle{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
           <div class="masonary-grid__item">
             {% include 'product-card-grid', max_height: max_height %}
