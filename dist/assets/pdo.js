@@ -124,7 +124,8 @@ $(function() {
 
 		// fadeout 'things' near bottom of scroll on mobile
 		$(window).scroll(function() {
-			if (window.scrollY / $('body').height() > 0.75) {
+			var scrollPercent = ($(window).width() < 750) ? 0.75 : 0.85;
+			if (window.scrollY / $('body').height() > scrollPercent) {
 				$('.collection-meta').addClass('zero-alpha');
 			}
 			else {
