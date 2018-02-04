@@ -83,36 +83,40 @@ $(function() {
 
 
 	// Set copy for collection header
-	// $("#collection-title").text("Things");
-	var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
-	$(collectionMetaHtml).insertAfter('#shopify-section-header');
+	var href_loc = window.location.href.split("/")[window.location.href.split("/").length -2];
+	if (href_loc === "collections") {
+		// $("#collection-title").text("Things");
+		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
+		$(collectionMetaHtml).insertAfter('#shopify-section-header');
 
-	// collection mouseover states
-	$('.grid-view-item').mouseover(function(){
-		$('.grid-view-item').not(this).each(function(){
-			$(this).addClass('ten-percent-alpha');
-		});
-		
-		// convert to numerical representation.
-		var priceStr = $(this).find(".grid-view-item__title").data("price"),
-			priceNum = Number(priceStr.slice(1).split(',').join("").split('.')[0]),
-			priceWord = numToWords(priceNum),
-			priceUSD = priceWord + "usd"; 
+		// collection mouseover states
+		$('.grid-view-item').mouseover(function(){
+			$('.grid-view-item').not(this).each(function(){
+				$(this).addClass('ten-percent-alpha');
+			});
+			
+			// convert to numerical representation.
+			var priceStr = $(this).find(".grid-view-item__title").data("price"),
+				priceNum = Number(priceStr.slice(1).split(',').join("").split('.')[0]),
+				priceWord = numToWords(priceNum),
+				priceUSD = priceWord + "usd"; 
 
-		$('#meta-things').html(priceUSD);
+			$('#meta-things').html(priceUSD);
 
-	})
-	$('.grid-view-item').mouseleave(function(){
-		$('.grid-view-item').removeClass('ten-percent-alpha');
-		$('#meta-things').html("things");
-	})
+		})
+		$('.grid-view-item').mouseleave(function(){
+			$('.grid-view-item').removeClass('ten-percent-alpha');
+			$('#meta-things').html("things");
+		})
 
 
- 	// random padding on load
- 	$('.masonary-grid__item').each((i, el) => { 
- 		var val = String(Math.floor(Math.random() * 25) + 10) + "%";  // magic numbers feel p good
- 		$(el).css( "padding", val )
- 	});
- 	// shuffle on load
- 	$('.shuffle .masonary-grid__item').shuffle();
+	 	// random padding on load
+	 	$('.masonary-grid__item').each((i, el) => { 
+	 		var val = String(Math.floor(Math.random() * 25) + 10) + "%";  // magic numbers feel p good
+	 		$(el).css( "padding", val )
+	 	});
+	 	// shuffle on load
+	 	$('.shuffle .masonary-grid__item').shuffle();
+	 	
+	 }
 });
