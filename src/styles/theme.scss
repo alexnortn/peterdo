@@ -5947,3 +5947,45 @@ $toolbar-height-small: 46px;
 .rich-text__text--small {
   font-size: em(floor($font-size-base * 0.88));
 }
+
+
+
+/*============================================================================
+  PDO specifics
+==============================================================================*/
+
+.collection-header {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-index-nav;
+
+  font-size: 64px;
+  font-weight: 600;
+
+  transition: font-size ease-in-out 250ms;
+
+  @include media-query($widescreen) {
+    font-size: 128px;
+  }
+
+  @include media-query($large) {
+    font-size: 96px;
+  }
+
+  @include media-query($medium) {
+    font-size: 64px;
+  }
+
+  @include media-query($small) {
+    font-size: 48px;
+  }
+}
+
+
+
+
+
