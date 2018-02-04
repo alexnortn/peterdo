@@ -113,9 +113,10 @@ $(function() {
 			$('#meta-things').html("things");
 		})
 
-		// random padding on load
+		// random padding on load wrt page width
+		var paddingRange = ($(window).width() < 750) ? 10 : 25;
 		$('.masonary-grid__item').each((i, el) => { 
-			var val = String(Math.floor(Math.random() * 25) + 10) + "%";  // magic numbers feel p good
+			var val = String(Math.floor(Math.random() * paddingRange) + 10) + "%";  // magic numbers feel p good
 			$(el).css( "padding", val )
 		});
 		// shuffle on load
