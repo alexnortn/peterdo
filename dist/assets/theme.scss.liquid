@@ -5992,6 +5992,7 @@ $toolbar-height-small: 46px;
   z-index: $z-index-nav;
 
   pointer-events: none;
+  transition: opacity ease-in-out 250ms;
 
   p {
     margin-bottom: 5%;
@@ -6022,6 +6023,11 @@ $toolbar-height-small: 46px;
 .ten-percent-alpha {
   opacity: 0.1;
 }
+
+.zero-alpha {
+  opacity: 0;
+}
+
 
 .pdo-line {
   &:after {

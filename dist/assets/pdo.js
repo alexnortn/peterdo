@@ -122,5 +122,15 @@ $(function() {
 		// shuffle on load
 		$('.shuffle .masonary-grid__item').shuffle();
 
+		// fadeout 'things' near bottom of scroll on mobile
+		$(window).scroll(function() {
+			if (window.scrollY / $('body').height() > 0.75) {
+				$('.collection-meta').addClass('zero-alpha');
+			}
+			else {
+				$('.collection-meta').removeClass('zero-alpha');
+			}
+		});
+
 	}
 });
