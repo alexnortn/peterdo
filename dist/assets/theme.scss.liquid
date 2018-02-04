@@ -983,7 +983,7 @@ $grid-breakpoints: (
   }
 
   @include media-query($small) {
-    margin-left: -$grid-gutter-mobile;
+    margin-left: 0;
     column-count: 2;
   }
 }
@@ -1298,7 +1298,7 @@ html {
   max-width: calc(#{$width-view} - #{$gutter-site} * 2);
 
   @include media-query($small) {
-    max-width: calc(#{$width-view} - #{$gutter-site-mobile} * 2);
+    max-width: $width-view;
   }
 }
 
@@ -6032,10 +6032,6 @@ $toolbar-height-small: 46px;
     border: 0.5px solid #000;
     top: 0;
     left: 50%;
-
-    @include media-query($small) {
-      border: none;
-    }
   }
 }
 
