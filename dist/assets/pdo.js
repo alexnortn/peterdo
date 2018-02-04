@@ -27,8 +27,8 @@ $(function() {
 
 	// Set copy for collection header
 	// $("#collection-title").text("Things");
-	var collectionHeaderHtml = "<div class='collection-header'><p>things</p></div>";
-	$(collectionHeaderHtml).insertAfter('#shopify-section-header');
+	var collectionMetaHtml = "<div class='collection-meta'><p>things</p></div>";
+	$(collectionMetaHtml).insertAfter('#shopify-section-header');
 
 	// how to create a random grid system
 	// a simple algorithm
