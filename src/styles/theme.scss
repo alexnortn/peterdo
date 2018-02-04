@@ -367,7 +367,8 @@ $section-spacing-small: 48px;
 $border-radius: 2px;
 
 /*================ Z-Index ================*/
-$z-index-dropdown : 7;
+$z-index-nav: 6;
+$z-index-dropdown: 7;
 $z-index-sub-nav: 8;
 $z-index-drawer: 9;
 $z-index-announcement-bar: 10;
@@ -961,6 +962,52 @@ $grid-breakpoints: (
 }
 
 /*============================================================================
+  Masonary Grid Setup
+    1. Allow the grid system to be used on lists.
+    2. Remove any margins and paddings that might affect the grid system.
+    3. Apply a negative `margin-left` to negate the columns' gutters.
+==============================================================================*/
+.masonary-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -$grid-gutter;
+  line-height: 0;
+  column-count: 3;
+  column-gap: 0;
+
+  @include media-query($medium) {
+    column-count: 2;
+  }
+
+  @include media-query($small) {
+    margin-left: -$grid-gutter-mobile;
+    column-count: 2;
+  }
+}
+
+.masonary-grid__item {
+  // padding-left: $grid-gutter;
+  padding: 100px;
+  width: 100%;
+  height: auto;
+
+  page-break-inside: avoid; /* Firefox */
+  break-inside: avoid; /* IE 10+ */
+  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+
+  transition: padding ease-in-out 250ms;
+
+  @include media-query($small) {
+    padding-left: $grid-gutter-mobile;
+  }
+
+  &[class*="--push"] {
+    position: relative;
+  }
+}
+
+/*============================================================================
   Reversed grids allow you to structure your source in the opposite
   order to how your rendered layout will appear.
 ==============================================================================*/
@@ -1252,6 +1299,7 @@ html {
 .main-content {
   display: block;
   padding-top: $section-spacing-small;
+  position: relative;
 
   @include media-query($medium-up) {
     padding-top: $section-spacing;
@@ -2624,6 +2672,7 @@ hr {
 
 .grid-view-item {
   margin: 0 auto $section-spacing-small;
+  transition: opacity 250ms ease-in-out;
 
   .custom__item & {
     margin-bottom: 0;
@@ -2657,6 +2706,11 @@ hr {
 
 .grid-view-item__link {
   display: block;
+
+  &:hover {
+    opacity: 1;
+    cursor: url(../assets/eyes.png), auto; 
+  }
 }
 
 .grid-view-item__vendor {
@@ -3690,8 +3744,19 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 /*================ MODULES ================*/
 .site-header {
   background-color: $color-body;
-  position: relative;
+  position: fixed;
+  z-index: $z-index-nav;
   padding: 0 $gutter-site;
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    border: 0.5px solid #000;
+    top: 0;
+    left: 50%;
+  }
 
   @include media-query($small) {
     border-bottom: 1px solid $color-border-1;
@@ -5899,3 +5964,69 @@ $toolbar-height-small: 46px;
 .rich-text__text--small {
   font-size: em(floor($font-size-base * 0.88));
 }
+
+
+
+/*============================================================================
+  PDO specifics
+==============================================================================*/
+
+.collection-meta {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  z-index: $z-index-nav;
+
+  pointer-events: none;
+
+  p {
+    margin-bottom: 5%;
+    font-size: 64px;
+    font-weight: 600;
+    text-align: center;
+
+    transition: font-size ease-in-out 250ms;
+
+    @include media-query($widescreen) {
+      font-size: 96px;
+    }
+
+    @include media-query($large) {
+      font-size: 64px;
+    }
+
+    @include media-query($medium) {
+      font-size: 48px;
+    }
+
+    @include media-query($small) {
+      font-size: 40px;
+    }
+  }
+}
+
+.ten-percent-alpha {
+  opacity: 0.1;
+}
+
+.pdo-line {
+  &:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    border: 0.5px solid #000;
+    top: 0;
+    left: 50%;
+  }
+}
+
+
+
+
+

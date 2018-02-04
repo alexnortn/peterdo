@@ -34,24 +34,6 @@
           <h1 class="collection-hero__title page-width">{{ collection.title }}</h1>
         </div>
       </div>
-
-      {% if collection.description != blank %}
-        <div class="rte collection-description page-width">
-          {{ collection.description }}
-        </div>
-      {% endif %}
-    {% else %}
-      <div class="page-width">
-        <div class="section-header text-center">
-          <!-- Select random string [things, stuff, items, etc] -->
-          <h1 id="collection-title">{{ collection.title }}</h1>
-          {% if collection.description != blank %}
-            <div class="rte">
-              {{ collection.description }}
-            </div>
-          {% endif %}
-        </div>
-      </div>
     {% endif %}
 
     {% if section.settings.tags_enable or section.settings.sort_enable %}
@@ -152,9 +134,9 @@
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
 
-      <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      <div class="masonary-grid grid--uniform shuffle{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
-          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="masonary-grid__item">
             {% include 'product-card-grid', max_height: max_height %}
           </div>
         {% else %}
