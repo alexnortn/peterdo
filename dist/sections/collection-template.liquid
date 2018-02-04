@@ -34,24 +34,6 @@
           <h1 class="collection-hero__title page-width">{{ collection.title }}</h1>
         </div>
       </div>
-
-      {% if collection.description != blank %}
-        <div class="rte collection-description page-width">
-          {{ collection.description }}
-        </div>
-      {% endif %}
-    {% else %}
-      <div class="page-width">
-        <div class="section-header text-center">
-          <!-- Select random string [things, stuff, items, etc] -->
-          <h1 id="collection-title">{{ collection.title }}</h1>
-          {% if collection.description != blank %}
-            <div class="rte">
-              {{ collection.description }}
-            </div>
-          {% endif %}
-        </div>
-      </div>
     {% endif %}
 
     {% if section.settings.tags_enable or section.settings.sort_enable %}
