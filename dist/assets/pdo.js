@@ -24,21 +24,88 @@ $(function() {
  
     };
 
+	// numToWords :: (Number a, String a) => a -> String
+	let numToWords = n => {
+
+		var arr = x => Array.from(x);
+		var num = x => Number(x) || 0;
+		var str = x => String(x);
+		var isEmpty = xs => xs.length === 0;
+		var take = n => xs => xs.slice(0,n);
+		var drop = n => xs => xs.slice(n);
+		var reverse = xs => xs.slice(0).reverse();
+		var comp = f => g => x => f (g (x));
+		var not = x => !x;
+		var chunk = n => xs =>
+		  isEmpty(xs) ? [] : [take(n)(xs), ...chunk (n) (drop (n) (xs))];
+	  
+	  let a = [
+	    '', 'one', 'two', 'three', 'four',
+	    'five', 'six', 'seven', 'eight', 'nine',
+	    'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
+	    'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
+	  ];
+	  
+	  let b = [
+	    '', '', 'twenty', 'thirty', 'forty',
+	    'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+	  ];
+	  
+	  let g = [
+	    '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion',
+	    'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion'
+	  ];
+	  
+	  // this part is really nasty still
+	  // it might edit this again later to show how Monoids could fix this up
+	  let makeGroup = ([ones,tens,huns]) => {
+	    return [
+	      num(huns) === 0 ? '' : a[huns] + ' hundred ',
+	      num(ones) === 0 ? b[tens] : b[tens] && b[tens] + '-' || '',
+	      a[tens+ones] || a[ones]
+	    ].join('');
+	  };
+	  
+	  let thousand = (group,i) => group === '' ? group : `${group} ${g[i]}`;
+	  
+	  if (typeof n === 'number')
+	    return numToWords(String(n));
+	  else if (n === '0')
+	    return 'zero';
+	  else
+	    return comp (chunk(3)) (reverse) (arr(n))
+	      .map(makeGroup)
+	      .map(thousand)
+	      .filter(comp(not)(isEmpty))
+	      .reverse()
+	      .join(' ');
+	};
+
 
 	// Set copy for collection header
 	// $("#collection-title").text("Things");
-	var collectionMetaHtml = "<div class='collection-meta'><p>things</p></div>";
+	var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
 	$(collectionMetaHtml).insertAfter('#shopify-section-header');
 
-	// how to create a random grid system
-	// a simple algorithm
-	// » create a new hierarchy for the section header element within the template
-	// position: fixed;
- //    width: 100%;
- //    height: 100%;
- //    z-index: 1;
- //    padding-top: 40%;
- //    font-size: 48px;
+	// collection mouseover states
+	$('.grid-view-item').mouseover(function(){
+		$('.grid-view-item').not(this).each(function(){
+			$(this).addClass('ten-percent-alpha');
+		});
+		
+		// convert to numerical representation.
+		var priceStr = $(this).find(".grid-view-item__title").data("price"),
+			priceNum = Number(priceStr.slice(1).split(',').join("").split('.')[0]),
+			priceWord = numToWords(priceNum),
+			priceUSD = priceWord + "usd"; 
+
+		$('#meta-things').html(priceUSD);
+
+	})
+	$('.grid-view-item').mouseleave(function(){
+		$('.grid-view-item').removeClass('ten-percent-alpha');
+		$('#meta-things').html("things");
+	})
 
 
  	// random padding on load

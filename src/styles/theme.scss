@@ -2671,6 +2671,7 @@ hr {
 
 .grid-view-item {
   margin: 0 auto $section-spacing-small;
+  transition: opacity 250ms ease-in-out;
 
   .custom__item & {
     margin-bottom: 0;
@@ -2704,6 +2705,11 @@ hr {
 
 .grid-view-item__link {
   display: block;
+
+  &:hover {
+    opacity: 1;
+    cursor: url(../assets/eyes.png), auto; 
+  }
 }
 
 .grid-view-item__vendor {
@@ -5972,7 +5978,7 @@ $toolbar-height-small: 46px;
     width: 0;
     height: 100%;
     position: absolute;
-    border: 0.5px solid black;
+    border: 0.5px solid #000;
     top: 0;
     left: 50%;
   }
@@ -5981,25 +5987,30 @@ $toolbar-height-small: 46px;
     margin-bottom: 5%;
     font-size: 64px;
     font-weight: 600;
+    text-align: center;
 
     transition: font-size ease-in-out 250ms;
 
     @include media-query($widescreen) {
-      font-size: 128px;
-    }
-
-    @include media-query($large) {
       font-size: 96px;
     }
 
-    @include media-query($medium) {
+    @include media-query($large) {
       font-size: 64px;
     }
 
-    @include media-query($small) {
+    @include media-query($medium) {
       font-size: 48px;
     }
+
+    @include media-query($small) {
+      font-size: 40px;
+    }
   }
+}
+
+.ten-percent-alpha {
+  opacity: 0.1;
 }
 
 
