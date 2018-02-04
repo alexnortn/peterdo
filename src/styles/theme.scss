@@ -1299,6 +1299,7 @@ html {
 .main-content {
   display: block;
   padding-top: $section-spacing-small;
+  position: relative;
 
   @include media-query($medium-up) {
     padding-top: $section-spacing;
@@ -3747,6 +3748,16 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   z-index: $z-index-nav;
   padding: 0 $gutter-site;
 
+  &:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    border: 0.5px solid #000;
+    top: 0;
+    left: 50%;
+  }
+
   @include media-query($small) {
     border-bottom: 1px solid $color-border-1;
     padding: 0;
@@ -5973,16 +5984,6 @@ $toolbar-height-small: 46px;
 
   pointer-events: none;
 
-  &:after {
-    content: '';
-    width: 0;
-    height: 100%;
-    position: absolute;
-    border: 0.5px solid #000;
-    top: 0;
-    left: 50%;
-  }
-
   p {
     margin-bottom: 5%;
     font-size: 64px;
@@ -6011,6 +6012,18 @@ $toolbar-height-small: 46px;
 
 .ten-percent-alpha {
   opacity: 0.1;
+}
+
+.pdo-line {
+  &:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    border: 0.5px solid #000;
+    top: 0;
+    left: 50%;
+  }
 }
 
 

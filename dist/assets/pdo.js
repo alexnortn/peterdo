@@ -81,11 +81,14 @@ $(function() {
 	      .join(' ');
 	};
 
+	// PDO line
+	$('.main-content').append("<div class='pdo-line'></div>");
 
+	// $("#collection-title").text("Things");
 	// Set copy for collection header
 	var href_loc = window.location.href.split("/")[window.location.href.split("/").length -2];
 	if (href_loc === "collections") {
-		// $("#collection-title").text("Things");
+
 		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
 		$(collectionMetaHtml).insertAfter('#shopify-section-header');
 
@@ -104,19 +107,20 @@ $(function() {
 			$('#meta-things').html(priceUSD);
 
 		})
+
 		$('.grid-view-item').mouseleave(function(){
 			$('.grid-view-item').removeClass('ten-percent-alpha');
 			$('#meta-things').html("things");
 		})
 
+		// random padding on load
+		$('.masonary-grid__item').each((i, el) => { 
+			var val = String(Math.floor(Math.random() * 25) + 10) + "%";  // magic numbers feel p good
+			$(el).css( "padding", val )
+		});
+		// shuffle on load
+		$('.shuffle .masonary-grid__item').shuffle();
 
-	 	// random padding on load
-	 	$('.masonary-grid__item').each((i, el) => { 
-	 		var val = String(Math.floor(Math.random() * 25) + 10) + "%";  // magic numbers feel p good
-	 		$(el).css( "padding", val )
-	 	});
-	 	// shuffle on load
-	 	$('.shuffle .masonary-grid__item').shuffle();
-	 	
-	 }
+	}
+
 });
