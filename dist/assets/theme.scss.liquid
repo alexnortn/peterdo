@@ -367,7 +367,8 @@ $section-spacing-small: 48px;
 $border-radius: 2px;
 
 /*================ Z-Index ================*/
-$z-index-dropdown : 7;
+$z-index-nav: 6;
+$z-index-dropdown: 7;
 $z-index-sub-nav: 8;
 $z-index-drawer: 9;
 $z-index-announcement-bar: 10;
@@ -3736,7 +3737,8 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 /*================ MODULES ================*/
 .site-header {
   background-color: $color-body;
-  position: relative;
+  position: fixed;
+  z-index: $z-index-nav;
   padding: 0 $gutter-site;
 
   @include media-query($small) {

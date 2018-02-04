@@ -38,8 +38,11 @@ $(function() {
  //    font-size: 48px;
 
 
- 	// random padding
- 	$('.masonary-grid__item').each((i, el) => { var val = String(Math.floor(Math.random() * 25) + 10) + "%";  $(el).css( "padding", val ) });
- 	// shuffle
+ 	// random padding on load
+ 	$('.masonary-grid__item').each((i, el) => { 
+ 		var val = String(Math.floor(Math.random() * 25) + 10) + "%";  // magic numbers feel p good
+ 		$(el).css( "padding", val )
+ 	});
+ 	// shuffle on load
  	$('.shuffle .masonary-grid__item').shuffle();
 });
