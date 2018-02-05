@@ -2687,6 +2687,10 @@ hr {
   margin: 0 auto $section-spacing-small;
   transition: opacity 250ms ease-in-out;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @include media-query($small) {
     margin: 0 auto $section-spacing-small-mobile;
   }
@@ -2727,7 +2731,6 @@ hr {
 
   &:hover {
     opacity: 1;
-    cursor: url(../assets/eyes.png), auto; 
   }
 }
 
@@ -6037,6 +6040,9 @@ $toolbar-height-small: 46px;
   opacity: 0;
 }
 
+.pointer {
+  cursor: pointer;
+}
 
 .pdo-line {
   &:after {

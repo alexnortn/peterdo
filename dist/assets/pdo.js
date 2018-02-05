@@ -90,7 +90,6 @@ $(function() {
 	$('.preorder').find('form').remove();
 	$('.preorder').find('.product-single__description').prepend(madeToOrderHtml);
 
-
 	// $("#collection-title").text("Things");
 	// Set copy for collection header
 	if (window.location.href.includes('shop') || window.location.href.includes('campaign')) {
@@ -127,7 +126,7 @@ $(function() {
 		// collection mouseover states
 		$('.grid-view-item').mouseover(function(){
 			$('.grid-view-item').not(this).each(function(){
-				$(this).addClass('ten-percent-alpha');
+				$(this).addClass('ten-percent-alpha pointer');
 			});
 			
 			// convert to numerical representation.
@@ -141,7 +140,7 @@ $(function() {
 		})
 
 		$('.grid-view-item').mouseleave(function(){
-			$('.grid-view-item').removeClass('ten-percent-alpha');
+			$('.grid-view-item').removeClass('ten-percent-alpha pointer');
 			$('#meta-things').html("things");
 		});
 	}
