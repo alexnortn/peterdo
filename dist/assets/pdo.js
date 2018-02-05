@@ -86,8 +86,8 @@ $(function() {
 
 	// $("#collection-title").text("Things");
 	// Set copy for collection header
-	var href_loc = window.location.href.split("/")[window.location.href.split("/").length -2];
-	if (href_loc === "collections") {
+	var href_loc = window.location.href.split("/")[window.location.href.split("/").length - 1];
+	if (href_loc === "shop") {
 
 		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
 		$(collectionMetaHtml).insertAfter('#shopify-section-header');
@@ -132,6 +132,12 @@ $(function() {
 				$('.collection-meta').removeClass('zero-alpha');
 			}
 		});
-
+	}
+	else if (href_loc === "campaign") {
+		// Disable pointer events on the campaign pages
+		// Remove item titles from page
+		$('.masonary-grid')
+			.addClass('no-touch')
+			.find('.grid-view-item__title').remove();
 	}
 });
