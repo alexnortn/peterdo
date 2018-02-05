@@ -87,6 +87,28 @@ $(function() {
 	// $("#collection-title").text("Things");
 	// Set copy for collection header
 	var href_loc = window.location.href.split("/")[window.location.href.split("/").length - 1];
+	if (href_loc === "shop" || href_loc === "campaign") {
+		// random padding on load wrt page width
+		var paddingRange = ($(window).width() < 750) ? 10 : 25;
+		$('.masonary-grid__item').each((i, el) => { 
+			var val = String(Math.floor(Math.random() * paddingRange) + 10) + "%";  // magic numbers feel p good
+			$(el).css( "padding", val )
+		});
+		// shuffle on load
+		$('.shuffle .masonary-grid__item').shuffle();
+
+		// fadeout 'things' near bottom of scroll on mobile
+		$(window).scroll(function() {
+			var scrollPercent = ($(window).width() < 750) ? 0.75 : 0.85;
+			if (window.scrollY / $('body').height() > scrollPercent) {
+				$('.collection-meta').addClass('zero-alpha');
+			}
+			else {
+				$('.collection-meta').removeClass('zero-alpha');
+			}
+		});
+	}
+	
 	if (href_loc === "shop") {
 
 		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
@@ -111,29 +133,11 @@ $(function() {
 		$('.grid-view-item').mouseleave(function(){
 			$('.grid-view-item').removeClass('ten-percent-alpha');
 			$('#meta-things').html("things");
-		})
-
-		// random padding on load wrt page width
-		var paddingRange = ($(window).width() < 750) ? 10 : 25;
-		$('.masonary-grid__item').each((i, el) => { 
-			var val = String(Math.floor(Math.random() * paddingRange) + 10) + "%";  // magic numbers feel p good
-			$(el).css( "padding", val )
-		});
-		// shuffle on load
-		$('.shuffle .masonary-grid__item').shuffle();
-
-		// fadeout 'things' near bottom of scroll on mobile
-		$(window).scroll(function() {
-			var scrollPercent = ($(window).width() < 750) ? 0.75 : 0.85;
-			if (window.scrollY / $('body').height() > scrollPercent) {
-				$('.collection-meta').addClass('zero-alpha');
-			}
-			else {
-				$('.collection-meta').removeClass('zero-alpha');
-			}
 		});
 	}
 	else if (href_loc === "campaign") {
+		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>campaign</p></div>";
+		$(collectionMetaHtml).insertAfter('#shopify-section-header');
 		// Disable pointer events on the campaign pages
 		// Remove item titles from page
 		$('.masonary-grid')
