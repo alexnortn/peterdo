@@ -1,8 +1,7 @@
-Deploy complete @ Sun Feb 04 2018 21:05:25 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
-Deploy complete @ Sun Feb 04 2018 21:05:27 GMT-0500 (EST). added/changed 2 file(s): assets/pdo.js, layout/theme.liquid.
-Deploy complete @ Sun Feb 04 2018 21:05:29 GMT-0500 (EST). added/changed 3 file(s): layout/theme.liquid, sections/header.liquid, templates/index.liquid.
-Deploy complete @ Sun Feb 04 2018 21:05:30 GMT-0500 (EST). added/changed 3 file(s): sections/collection-template.liquid, snippets/product-card-grid.liquid, snippets/product-price.liquid.
-Deploy complete @ Sun Feb 04 2018 21:05:32 GMT-0500 (EST). added/changed 3 file(s): templates/product.liquid, sections/product-template.liquid, sections/collection.liquid.
-Deploy complete @ Sun Feb 04 2018 21:08:45 GMT-0500 (EST). added/changed 1 file(s): assets/pdo.js.
-Deploy complete @ Sun Feb 04 2018 21:11:39 GMT-0500 (EST). added/changed 1 file(s): assets/pdo.js.
-Deploy complete @ Sun Feb 04 2018 21:11:56 GMT-0500 (EST). added/changed 1 file(s): assets/pdo.js.
+Deploy complete @ Sun Feb 04 2018 21:13:13 GMT-0500 (EST). added/changed 1 file(s): assets/pdo.js.
+Deploy complete @ Sun Feb 04 2018 21:13:15 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
+Deploy complete @ Sun Feb 04 2018 21:13:16 GMT-0500 (EST). added/changed 2 file(s): layout/theme.liquid, sections/header.liquid.
+Deploy complete @ Sun Feb 04 2018 21:13:18 GMT-0500 (EST). added/changed 3 file(s): templates/index.liquid, sections/collection-template.liquid, snippets/product-card-grid.liquid.
+Deploy complete @ Sun Feb 04 2018 21:13:19 GMT-0500 (EST). added/changed 2 file(s): snippets/product-price.liquid, templates/product.liquid.
+Deploy complete @ Sun Feb 04 2018 21:13:21 GMT-0500 (EST). added/changed 2 file(s): sections/product-template.liquid, sections/collection.liquid.
+Deploy complete @ Sun Feb 04 2018 21:17:11 GMT-0500 (EST). added/changed 1 file(s): assets/pdo.js.

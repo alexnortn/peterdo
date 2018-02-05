@@ -116,6 +116,10 @@ $(function() {
 	}
 	
 	if (window.location.href.includes('shop')) {
+		// Are we on the shop page or in a product detail page?
+		if (!$('body').hasClass('template-collection')) {
+			return;
+		}
 
 		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
 		$(collectionMetaHtml).insertAfter('#shopify-section-header');
