@@ -132,6 +132,12 @@ $(function() {
 				$('.collection-meta').removeClass('zero-alpha');
 			}
 		});
-
+	}
+	else if (href_loc === "campaign") {
+		// Disable pointer events on the campaign pages
+		// Remove item titles from page
+		$('.masonary-grid')
+			.addClass('no-touch')
+			.find('.grid-view-item__title').remove();
 	}
 });

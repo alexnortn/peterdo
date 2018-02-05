@@ -35,6 +35,13 @@
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   {% include 'google-fonts' %}
 
+  {% if template == 'index' %}
+    <script>
+      // redirect index to campaign for MVP launch feb 2018
+      window.location.replace( '/collections/campaign' );
+    </script>
+  {% endif %}
+
   <script>
     var theme = {
       strings: {
