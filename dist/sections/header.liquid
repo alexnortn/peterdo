@@ -47,7 +47,7 @@
                       <span class="icon__fallback-text">{{ 'layout.navigation.collapse' | t }}</span>
                     </button>
                   </div>
-                  <a href="{{ link_campaign }}" class="mobile-nav__sublist-link mobile-nav__sublist-header">
+                  <a href="{{ link.url }}" class="mobile-nav__sublist-link mobile-nav__sublist-header">
                     {{ link.title }}
                   </a>
                 </div>
@@ -74,21 +74,21 @@
                               <span class="icon__fallback-text">{{ 'layout.navigation.collapse' | t }}</span>
                             </button>
                           </div>
-                          <a href="{{ childlink_campaign }}" class="mobile-nav__sublist-link mobile-nav__sublist-header">
+                          <a href="{{ childlink.url }}" class="mobile-nav__sublist-link mobile-nav__sublist-header">
                             {{ childlink.title }}
                           </a>
                         </div>
                       </li>
                       {% for grandchildlink in linklists[grand_child_list_handle].links %}
                         <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
-                          <a href="{{ grandchildlink_campaign }}" class="mobile-nav__sublist-link">
+                          <a href="{{ grandchildlink.url }}" class="mobile-nav__sublist-link">
                             {{ grandchildlink.title | escape }}
                           </a>
                         </li>
                       {% endfor %}
                     </ul>
                   {% else %}
-                    <a href="{{ childlink_campaign }}" class="mobile-nav__sublist-link">
+                    <a href="{{ childlink.url }}" class="mobile-nav__sublist-link">
                       {{ childlink.title | escape }}
                     </a>
                   {% endif %}
@@ -96,7 +96,7 @@
               {% endfor %}
             </ul>
           {% else %}
-            <a href="{{ link_campaign }}" class="mobile-nav__link">
+            <a href="{{ link.url }}" class="mobile-nav__link">
               {{ link.title }}
             </a>
           {% endif %}
