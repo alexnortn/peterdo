@@ -84,6 +84,13 @@ $(function() {
 	// PDO line
 	$('.main-content').append("<div class='pdo-line'></div>");
 
+	// Made to order items » aka products with 'preorder' tag
+	var madeToOrderText = "Email shop@peterdo.net to inquire.";
+	var madeToOrderHtml = "<div class='made-to-order'><p>" + madeToOrderText + "</p></div>";
+	$('.preorder').find('form').remove();
+	$('.preorder').find('.product-single__description').prepend(madeToOrderHtml);
+
+
 	// $("#collection-title").text("Things");
 	// Set copy for collection header
 	var href_loc = window.location.href.split("/")[window.location.href.split("/").length - 1];

@@ -407,7 +407,9 @@ $font-weight-header: 600;
 $font-size-header: 20px;
 $font-bold-titles: false;
 
-$font-stack-body: "Work Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$font-stack-cta: "Work Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$font-stack-body: "Libre Baskerville", "Georgia", sans-serif;
+
 $font-size-base: 16px; // Henseforth known as 1em
 
 $fs-1: 12px;
@@ -421,7 +423,7 @@ $fs-8: 64px;
 
 @mixin type-text--12 {
   font: {
-    family: $font-stack-body;
+    family: $font-stack-cta;
     size:   $fs-1;
     weight: $font-weight-normal;
   }
@@ -431,7 +433,7 @@ $fs-8: 64px;
 
 @mixin type-cta--12 {
   font: {
-    family: $font-stack-body;
+    family: $font-stack-cta;
     size:   $fs-1;
     weight: $font-weight-medium;
   }
@@ -464,7 +466,7 @@ $fs-8: 64px;
 
 @mixin type-input--12-16 {
   font: {
-    family: $font-stack-body;
+    family: $font-stack-cta;
     size:   $fs-1;
     weight: $font-weight-normal;
   }
@@ -476,7 +478,7 @@ $fs-8: 64px;
 
 @mixin type-meta--10-12--right {
   font: {
-    family: $font-stack-body;
+    family: $font-stack-cta;
     size:   $fs-1;
     weight: $font-weight-normal;
   }
@@ -489,7 +491,7 @@ $fs-8: 64px;
 
 @mixin type-body--16-24 {
   font: {
-    family: $font-stack-body;
+    family: $font-stack-cta;
     size:   $fs-3;
     weight: $font-weight-normal;
   }
@@ -497,9 +499,14 @@ $fs-8: 64px;
   line-height: $fs-5;
 }
 
+@mixin type-body--16-24--bold {
+  @include type-body--16-24();
+  font-weight: $font-weight-bold;
+}
+
 @mixin type-h--14-20 {
   font: {
-    family: $font-stack-body;
+    family: $font-stack-cta;
     size:   $fs-2;
     weight: $font-weight-bold;
   }
@@ -1367,7 +1374,7 @@ textarea,
 button,
 select {
   font-size: $font-size-base;
-  font-family: $font-stack-body;
+  font-family: $font-stack-cta;
   color: $color-text;
   line-height: 1.5;
 }
@@ -1823,7 +1830,7 @@ a {
 }
 
 .btn--small {
-  font-family: $font-stack-body;
+  font-family: $font-stack-cta;
   padding: 8px 10px;
   font-size: em(12);
   line-height: 1;
@@ -2692,6 +2699,7 @@ hr {
 .grid-view-item__title {
   margin-bottom: 0;
   @include type-text--12();
+  text-transform: lowercase;
 }
 
 .grid-view-item__meta {
@@ -3250,6 +3258,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .product-single__description {
   margin-top: $grid-gutter;
+  @include type-body--16-24();
 }
 
 /*================ Product Images ================*/
@@ -6043,6 +6052,11 @@ $toolbar-height-small: 46px;
 
 .no-touch {
   pointer-events: none;
+}
+
+.made-to-order {
+  @include type-body--16-24--bold;
+  margin-bottom: 24px;
 }
 
 
