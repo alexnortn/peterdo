@@ -93,8 +93,7 @@ $(function() {
 
 	// $("#collection-title").text("Things");
 	// Set copy for collection header
-	var href_loc = window.location.href.split("/")[window.location.href.split("/").length - 1];
-	if (href_loc === "shop" || href_loc === "campaign") {
+	if (window.location.href.includes('shop') || window.location.href.includes('campaign')) {
 		// random padding on load wrt page width
 		var paddingRange = ($(window).width() < 750) ? 10 : 25;
 		$('.masonary-grid__item').each((i, el) => { 
@@ -116,7 +115,7 @@ $(function() {
 		});
 	}
 	
-	if (href_loc === "shop") {
+	if (window.location.href.includes('shop')) {
 
 		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>things</p></div>";
 		$(collectionMetaHtml).insertAfter('#shopify-section-header');
@@ -142,7 +141,7 @@ $(function() {
 			$('#meta-things').html("things");
 		});
 	}
-	else if (href_loc === "campaign") {
+	else if (window.location.href.includes('campaign')) {
 		var collectionMetaHtml = "<div class='collection-meta'><p id='meta-things'>campaign</p></div>";
 		$(collectionMetaHtml).insertAfter('#shopify-section-header');
 		// Disable pointer events on the campaign pages
