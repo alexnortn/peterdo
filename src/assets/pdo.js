@@ -85,8 +85,8 @@ $(function() {
 	$('.main-content').append("<div class='pdo-line'></div>");
 
 	// Made to order items » aka products with 'preorder' tag
-	var madeToOrderText = "Email shop@peterdo.net to inquire.";
-	var madeToOrderHtml = "<div class='made-to-order'><p>" + madeToOrderText + "</p></div>";
+	var madeToOrderHTML = "<p>Email SHOP@PETERDO.NET to place an order</p><p>–A 50% deposit is required to confirm your order</p><p>–Jewelry will ship in 3-5 weeks</p><p>–Bags will ship in 4-6 weeks</p>";
+	var madeToOrderHtml = "<div class='made-to-order'>" + madeToOrderHTML + "</div>";
 	$('.preorder').find('form').remove();
 	$('.preorder').find('.product-single__description').prepend(madeToOrderHtml);
 

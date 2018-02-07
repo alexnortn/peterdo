@@ -499,6 +499,11 @@ $fs-8: 64px;
   line-height: 18px;
 }
 
+@mixin type-body--12-18--italic {
+  @include type-body--12-18();
+  font-style: italic;
+}
+
 
 @mixin type-body--16-24 {
   font: {
@@ -513,6 +518,7 @@ $fs-8: 64px;
 @mixin type-body--16-24--bold {
   @include type-body--16-24();
   font-weight: $font-weight-bold;
+  font-style: normal;
 }
 
 @mixin type-h--14-20 {
@@ -6082,8 +6088,16 @@ $toolbar-height-small: 46px;
 }
 
 .made-to-order {
-  @include type-body--16-24--bold;
+  @include type-body--16-24;
   margin-bottom: 24px;
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  p:first-child {
+      @include type-body--16-24--bold;
+  }
 }
 
 
