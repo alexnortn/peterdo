@@ -489,6 +489,17 @@ $fs-8: 64px;
   text-align: right;
 }
 
+@mixin type-body--12-18 {
+  font: {
+    family: $font-stack-cta;
+    size:   $fs-1;
+    weight: $font-weight-normal;
+  }
+  color: #000;
+  line-height: 18px;
+}
+
+
 @mixin type-body--16-24 {
   font: {
     family: $font-stack-cta;
@@ -1320,9 +1331,11 @@ html {
 }
 
 .section-header {
+  margin-top: $section-spacing-small;
   margin-bottom: $section-spacing-small;
 
   @include media-query($medium-up) {
+    margin-top: $section-spacing;
     margin-bottom: $section-spacing;
   }
 }
@@ -1494,7 +1507,8 @@ h6 {
 /*================ RTE headings ================*/
 .rte {
   color: $color-body-text;
-  margin-bottom: $section-spacing-small;
+  // margin-bottom: $section-spacing-small;
+  // ^ disabling this for now (02.06.18 adn)
 
   // If an .rte div is the last element in its parent,
   // make it flush with the bottom of the container
@@ -1709,6 +1723,13 @@ ol {
 
 /*================ #Rich Text Editor ================*/
 .rte {
+  max-width: 600px;
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-bottom: 160px;
+
+  @include type-body--12-18();
+
   img {
     height: auto;
   }
