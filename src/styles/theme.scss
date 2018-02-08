@@ -6132,6 +6132,15 @@ $toolbar-height-small: 46px;
   position: relative;
   background-color: white;
   z-index: $z-index-drawer;
+
+  @include media-query($medium) {
+    padding: 96px 0;
+  }
+
+  @include media-query($small) {
+    padding-top: 48px;
+    padding-bottom: 0;
+  }
 }
 
 
