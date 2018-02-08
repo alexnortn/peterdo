@@ -3809,6 +3809,10 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
   @include media-query($small) {
     padding: 0;
+
+    &:after {
+      border: none;
+    }
   }
 
   @include media-query($medium-up) {
@@ -4568,6 +4572,10 @@ $nav-button-padding: 15px;
 
   &.js-menu--is-open {
     display: block;
+  }
+
+  @include media-query($small) {
+    z-index: $z-index-dropdown;
   }
 }
 
