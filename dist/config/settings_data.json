@@ -176,7 +176,7 @@
           "show_quantity_selector": true,
           "show_variant_labels": false,
           "show_vendor": false,
-          "enable_zoom": true,
+          "enable_zoom": false,
           "show_share_buttons": false
         }
       },
