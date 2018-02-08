@@ -3194,6 +3194,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .product-single {
   // prevent scroll anchoring within element
   overflow-anchor: none;
+  margin-top: 128px;
 }
 
 .product-single__title {
@@ -3354,6 +3355,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 // Prevent reflow when image loads
 .product-single__photo {
   margin: 0 auto;
+  margin-bottom: 64px;
   min-height: 1px;
   width: 100%;
   height: 100%;
@@ -3363,6 +3365,10 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 @include media-query($small) {
   .template-product .main-content {
     padding-top: $grid-gutter-mobile;
+  }
+
+  .product-single__photo {
+    margin-bottom: 32px;
   }
 
   .thumbnails-slider--active {
@@ -6107,6 +6113,25 @@ $toolbar-height-small: 46px;
   p:first-child {
       @include type-body--16-24--bold;
   }
+}
+
+.size-chart {
+  position: relative;
+  border: 0px #555 solid;
+  background-color: #ffffff;
+  padding: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.size-chart-container {
+  width: 100%;
+  top: 0;
+  padding: 128px 0;
+  position: relative;
+  background-color: white;
+  z-index: $z-index-drawer;
 }
 
 
