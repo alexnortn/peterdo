@@ -500,8 +500,13 @@ $fs-8: 64px;
 }
 
 @mixin type-body--12-18--italic {
-  @include type-body--12-18();
+  @include type-body--12-18;
   font-style: italic;
+}
+
+@mixin type-body--12-18--bold {
+  @include type-body--12-18;
+  font-weight: 500;
 }
 
 
@@ -3290,7 +3295,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .product-single__description {
   margin-top: $grid-gutter;
-  @include type-body--16-24();
+  @include type-body--12-18();
 }
 
 /*================ Product Images ================*/
@@ -6103,15 +6108,15 @@ $toolbar-height-small: 46px;
 }
 
 .made-to-order {
-  @include type-body--16-24;
+  @include type-body--12-18();
   margin-bottom: 24px;
 
   p {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   p:first-child {
-      @include type-body--16-24--bold;
+      @include type-body--12-18--bold();
   }
 }
 
