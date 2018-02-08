@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Deploy complete @ Tue Feb 06 2018 23:35:58 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
 =======
 Deploy complete @ Tue Feb 06 2018 23:43:58 GMT-0500 (EST). added/changed 1 file(s): assets/pdo.js.
@@ -16,3 +17,7 @@ Deploy complete @ Tue Feb 06 2018 23:54:35 GMT-0500 (EST). added/changed 1 file(
 Deploy complete @ Tue Feb 06 2018 23:55:05 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
 Deploy complete @ Tue Feb 06 2018 23:55:17 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
 >>>>>>> dev
+=======
+Deploy complete @ Wed Feb 07 2018 22:09:45 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
+Deploy complete @ Wed Feb 07 2018 22:11:45 GMT-0500 (EST). added/changed 1 file(s): assets/theme.scss.liquid.
+>>>>>>> prod
