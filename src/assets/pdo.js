@@ -153,4 +153,10 @@ $(function() {
 			.addClass('no-touch')
 			.find('.grid-view-item__title').remove();
 	}
+
+	// Toggle product details element
+	$('.product-button').click(function() {
+		// $('.product-single__description ul').fadeToggle('fast');
+		console.log('toggle');
+	});
 });
