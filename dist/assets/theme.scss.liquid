@@ -6152,6 +6152,8 @@ $toolbar-height-small: 46px;
   background-color: white;
   z-index: $z-index-drawer;
 
+  display: none;
+
   @include media-query($medium) {
     padding: 96px 0;
   }
@@ -6163,9 +6165,9 @@ $toolbar-height-small: 46px;
 }
 
 .product-button {
-  padding: 25px;
+  padding: 10px 0;
   user-select: none;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: $font-weight-medium;;
   transition: all 250ms ease-in-out;
 }
@@ -6173,6 +6175,10 @@ $toolbar-height-small: 46px;
 .product-button:hover {
   opacity: 0.75;
   cursor: pointer;
+}
+
+.product-single__description ul {
+  display: none;
 }
 
 

@@ -90,6 +90,16 @@ $(function() {
 	$('.preorder').find('form').remove();
 	$('.preorder').find('.product-single__description').prepend(madeToOrderHtml);
 
+	// Toggle product details element
+	$('.details-button').click(function() {
+		$('.product-single__description ul').fadeToggle('fast');
+	});
+
+	// Toggle size chart element
+	$('.size-button').click(function() {
+		$('.size-chart-container').fadeIn('fast');
+	});
+
 	// $("#collection-title").text("Things");
 	// Set copy for collection header
 	if (window.location.href.includes('shop') || window.location.href.includes('campaign')) {
@@ -137,7 +147,7 @@ $(function() {
 
 			$('#meta-things').html(priceUSD);
 
-		})
+		});
 
 		$('.grid-view-item').mouseleave(function(){
 			$('.grid-view-item').removeClass('ten-percent-alpha pointer');
@@ -153,10 +163,4 @@ $(function() {
 			.addClass('no-touch')
 			.find('.grid-view-item__title').remove();
 	}
-
-	// Toggle product details element
-	$('.product-button').click(function() {
-		// $('.product-single__description ul').fadeToggle('fast');
-		console.log('toggle');
-	});
 });
