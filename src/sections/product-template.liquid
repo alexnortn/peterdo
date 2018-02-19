@@ -67,7 +67,7 @@
       </noscript>
     </div>
 
-    <div class="grid__item {{ product_description_width }}">
+    <div class="product-details-container grid__item {{ product_description_width }}">
       <div class="product-single__meta">
 
         <h1 itemprop="name" class="product-single__title">{{ product.title }}</h1>
@@ -159,12 +159,20 @@
 
         <div class="product-single__description rte" itemprop="description">
           {{ product.description }}
+          <!-- Insert a product details button -->
+          <div class="details-button product-button">
+            <a>Product Details</a>
+          </div>
           
           
           {% if product.options contains 'Size' %}
             <!-- Remove { See Size Chart element MVP Feb 2018} -->
             <!-- <a class="size-chart-open-popup" href="#size-chart">See Size Chart</a> -->
-            {% endif %}
+            <!-- Insert a size chart button -->
+            <div class="size-button product-button">
+              <a href="#size-chart">Size Chart</a>
+            </div>
+          {% endif %}
 
             
           
@@ -179,9 +187,19 @@
 </div>
 
 <!-- Size Chart -->
-<div class="size-chart-container">
+<div id="size-chart" class="size-chart-container">
   <div class="size-chart" class="mfp-hide">
-    {{ pages.size-chart.content }}
+    {% for tag in product.tags %}
+      {% if tag == "logo_t" %}
+        {{ pages.size-chart-logo_t.content }}
+      {% endif %}
+      {% if tag == "quote_t" %}
+        {{ pages.size-chart-quote_t.content }}
+      {% endif %}
+      {% if tag == "tank" %}
+        {{ pages.size-chart-tank.content }}
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 
